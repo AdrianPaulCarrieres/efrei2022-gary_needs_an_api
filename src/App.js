@@ -1,6 +1,7 @@
 import './App.css';
 import React, { useState, useEffect, Suspense, useCallback } from 'react';
 import { getElement, setElement } from './services';
+import Bookmarks from './components/Bookmarks';
 const Item = React.lazy(() => import('./components/Item'));
 
 function App() {
@@ -60,6 +61,7 @@ function App() {
         onClick={() => toggleBookmarks()}>
         {(bookmarks && bookmarks.length && bookmarks.includes(randomIndex)) ? '★' : '☆' || '☆'}
       </button>
+      <Bookmarks />
     </div>
   );
 }
