@@ -15,8 +15,6 @@ function App() {
   }, [quotes.length])
 
   function toggleBookmarks(){
-    console.table(bookmarks);
-
     //add or remove from bookmarks
     if(bookmarks !== null && bookmarks.includes(randomIndex)){
       const newBookmarks = bookmarks.filter(i => i !== randomIndex);
@@ -24,7 +22,6 @@ function App() {
       setBookmarks(newBookmarks);
     } else {
       const newBookmarks = bookmarks;
-      console.table(newBookmarks)
       setBookmarks([...newBookmarks, randomIndex]);
       setElement('bookmarks', bookmarks);
     }
