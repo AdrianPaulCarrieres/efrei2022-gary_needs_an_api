@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getElement, setElement } from '../services';
+import { getElement } from '../services';
 import Item from "./Item";
 
 function Bookmarks() {
@@ -21,15 +21,10 @@ function Bookmarks() {
     }, [bookmarks]);
 
     return (
-        <div>
-            <div className="List">
-                <ul>
-                    {quotes.map(quote => (
-                        <li>
-                            <Item quote={quote} />
-                        </li>
-                    ))}
-                </ul>
+        <div className="min-h-screen flex flex-col justify-center">
+            <div className="mx-auto">{quotes.map(quote => (
+                <Item quote={quote} />
+            ))}
             </div>
         </div>
     )

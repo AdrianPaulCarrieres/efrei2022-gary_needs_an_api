@@ -43,6 +43,7 @@ function App() {
   }, [quotes, setRandomQuote]);
 
   return (
+    <div>
     <div className="min-h-screen flex flex-col justify-center">
       <h1 className="text-3xl font-bold mx-auto text-white">
         Gary a besoin d'une API
@@ -61,6 +62,7 @@ function App() {
         onClick={() => toggleBookmarks()}>
         {(bookmarks && bookmarks.length && bookmarks.includes(randomIndex)) ? '★' : '☆' || '☆'}
       </button>
+    </div>
       <Bookmarks />
     </div>
   );
