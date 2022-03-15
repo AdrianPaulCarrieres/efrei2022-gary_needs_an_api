@@ -6,4 +6,9 @@ function getElement(key) {
     return JSON.parse(localStorage.getItem(key))
 }
 
-export { setElement, getElement};
+function pushElement(key, value) {
+    const l = [...getElement(key), value];
+    setElement(key, l);
+}
+
+export { setElement, getElement, pushElement};
