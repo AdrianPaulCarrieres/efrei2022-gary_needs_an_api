@@ -16,8 +16,7 @@ function App() {
   }, []);
 
   useEffect(() => {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    setRandomIndex(randomIndex);
+    setRandomQuote();
   }, [quotes]);
 
   return (
@@ -26,12 +25,20 @@ function App() {
         Gary a besoin d'une API
       </h1>
       <div>
+        <button onClick={() => setRandomQuote()}>Get new quote!</button>
+      </div>
+      <div>
         <Suspense fallback={<div>Chargement...</div>}>
           {(quotes.length > 0 && <Item quote={quotes[randomIndex]} />) || <div>Chargement...</div>}
         </Suspense>
       </div>
     </div>
   );
+
+  function setRandomQuote() {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    setRandomIndex(randomIndex);
+  }
 }
 
 export default App;
