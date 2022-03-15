@@ -1,7 +1,19 @@
 import logo from './logo.svg';
 import './App.css';
+import { useState, useEffect } from 'react';
 
 function App() {
+
+  const [quotes, setQuotes] = useState([]);
+
+  //fetch quotes from API
+  useEffect(() => {
+    fetch('https://finalspaceapi.com/api/v0/quote/')
+      .then(response => response.json())
+      .then(data => setQuotes(data))
+      .catch(error => console.log(error));
+  }, []);
+
   return (
     <div className="App">
       <header className="App-header">
