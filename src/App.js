@@ -1,11 +1,16 @@
 import './App.css';
-import React, { useState, useEffect, Suspense } from 'react';
+import React, { useState, useEffect, Suspense, useCallback } from 'react';
 const Item = React.lazy(() => import('./components/Item'));
 
 function App() {
 
   const [quotes, setQuotes] = useState([]);
   const [randomIndex, setRandomIndex] = useState(-1);
+
+  const setRandomQuote = useCallback(() => {
+    const randomIndex = Math.floor(Math.random() * quotes.length);
+    setRandomIndex(randomIndex);
+    }, [quotes.length])
 
   //fetch quotes from API
   useEffect(() => {
@@ -17,7 +22,7 @@ function App() {
 
   useEffect(() => {
     setRandomQuote();
-  }, [quotes]); // eslint-disable-line react-hooks/exhaustive-deps
+  }, [quotes, setRandomQuote]);
 
   return (
     <div className="min-h-screen flex flex-col justify-center">
@@ -34,11 +39,6 @@ function App() {
         </div>
     </div>
   );
-
-  function setRandomQuote() {
-    const randomIndex = Math.floor(Math.random() * quotes.length);
-    setRandomIndex(randomIndex);
-  }
 }
 
 export default App;
