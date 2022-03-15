@@ -1,5 +1,6 @@
 import './App.css';
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense } from 'react';
+const List = React.lazy(() => import('./components/List'));
 
 function App() {
 
@@ -14,9 +15,16 @@ function App() {
   }, []);
 
   return (
-    <h1 className="text-3xl font-bold underline">
-      Hello world!
-    </h1>
+    <div>
+      <h1 className="text-3xl font-bold underline">
+        Gary a besoin d'une API
+      </h1>
+      <div>
+        <Suspense fallback={<div>Chargement...</div>}>
+          <List quotes={quotes} />
+        </Suspense>
+      </div>
+    </div>
   );
 }
 
