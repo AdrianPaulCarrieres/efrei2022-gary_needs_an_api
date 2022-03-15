@@ -14,9 +14,8 @@ function App() {
     setRandomIndex(randomIndex);
   }, [quotes.length])
 
-  function toggleBookmarks(){
-    //add or remove from bookmarks
-    if(bookmarks !== null && bookmarks.includes(randomIndex)){
+  function toggleBookmarks() {
+    if (bookmarks !== null && bookmarks.includes(randomIndex)) {
       const newBookmarks = bookmarks.filter(i => i !== randomIndex);
       setElement('bookmarks', newBookmarks);
       setBookmarks(newBookmarks);
@@ -27,7 +26,6 @@ function App() {
     }
   }
 
-  //fetch quotes from API
   useEffect(() => {
     fetch('https://finalspaceapi.com/api/v0/quote/')
       .then(response => response.json())
