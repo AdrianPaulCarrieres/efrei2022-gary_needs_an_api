@@ -17,7 +17,7 @@ function App() {
 
   useEffect(() => {
     setRandomQuote();
-  }, [quotes]);
+  }, [quotes]); // eslint-disable-line react-hooks/exhaustive-deps
 
   return (
     <div className="min-h-screen flex flex-col justify-center">
