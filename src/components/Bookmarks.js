@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import {getElement, setElement} from '../services';
+import { getElement, setElement } from '../services';
 import Item from "./Item";
 
 function Bookmarks() {
@@ -12,26 +12,25 @@ function Bookmarks() {
 
     useEffect(() => {
         fetch('https://finalspaceapi.com/api/v0/quote/')
-          .then(response => response.json())
-          .then(data => setQuotes(data))
-          .catch(error => console.log(error));
-      }, []);
-
-    useEffect(() => {
-        setElement('bookmarks', bookmarks);
+            .then(response => response.json())
+            .then(data => {
+                const q = data.filter(quote => bookmarks.includes(quote.id))
+                setQuotes(q)
+            })
+            .catch(error => console.log(error));
     }, [bookmarks]);
 
     return (
         <div>
-        <div className="List">
-            <ul>
-                {quotes.map(quote => (
-                    <li>
-                        <Item quote={quote} />
-                    </li>
-                ))}
-            </ul>
-        </div>
+            <div className="List">
+                <ul>
+                    {quotes.map(quote => (
+                        <li>
+                            <Item quote={quote} />
+                        </li>
+                    ))}
+                </ul>
+            </div>
         </div>
     )
 }
