@@ -1,6 +1,5 @@
 import './App.css';
 import React, { useState, useEffect, Suspense } from 'react';
-const List = React.lazy(() => import('./components/List'));
 const Item = React.lazy(() => import('./components/Item'));
 
 function App() {
