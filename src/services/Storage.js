@@ -3,7 +3,7 @@ function setElement(key, value) {
 }
 
 function getElement(key) {
-    return JSON.parse(localStorage.getItem(key))
+    return JSON.parse(localStorage.getItem(key)) || [];
 }
 
 export { setElement, getElement};

@@ -5,8 +5,7 @@ function Bookmarks() {
     const [bookmarks, setBookmarks] = useState([]);
 
     useEffect(() => {
-        const l = getElement('bookmarks');
-        setTodoList(l);
+        setBookmarks(getElement('bookmarks'));
     }, []);
 
     useEffect(() => {
