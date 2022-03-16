@@ -21,10 +21,11 @@ function Bookmarks() {
     }, [bookmarks]);
 
     return (
-        <div className="min-h-screen flex flex-col justify-center">
-            <div className="mx-auto">{quotes.map(quote => (
-                <Item quote={quote} />
-            ))}
+        <div>
+            <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 grid-rows-3">
+                {quotes.map(quote => (
+                    <Item quote={quote} />
+                ))}
             </div>
         </div>
     )

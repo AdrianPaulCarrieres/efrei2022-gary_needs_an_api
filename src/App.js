@@ -15,7 +15,7 @@ function App() {
     setRandomIndex(randomIndex);
   }, [quotes.length])
 
-  function toggleBookmarks() {
+  function toggleBookmark() {
     if (bookmarks !== null && bookmarks.includes(randomIndex)) {
       const newBookmarks = bookmarks.filter(i => i !== randomIndex);
       setElement('bookmarks', newBookmarks);
@@ -56,7 +56,7 @@ function App() {
         <div className="mx-auto flex">
           <button
             className='mx-5 rounded-lg p-2 border-solid border-2 text-white my-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:border-yellow-500 hover:text-yellow-500 duration-300'
-            onClick={() => toggleBookmarks()}>
+            onClick={() => toggleBookmark()}>
             {(bookmarks && bookmarks.length && bookmarks.includes(randomIndex)) ? '★' : '☆' || '☆'}
           </button>
           <button className='mx-auto rounded-lg p-2 text-white my-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
