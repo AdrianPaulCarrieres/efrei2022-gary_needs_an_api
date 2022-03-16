@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect, Suspense, useCallback } from 'react';
-import { getElement, setElement } from './services';
+import { getElement, setElement } from './services/storageService';
 import { Link } from "react-router-dom";
 const Item = React.lazy(() => import('./components/Item'));
 
@@ -14,6 +14,7 @@ function App() {
     const randomIndex = Math.floor(Math.random() * quotes.length);
     setRandomIndex(randomIndex);
   }, [quotes.length])
+
 
   function toggleBookmark() {
     if (bookmarks !== null && bookmarks.includes(randomIndex)) {

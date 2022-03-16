@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getElement, setElement } from '../services';
+import { getElement, setElement } from '../services/storageService';
 import { Link } from "react-router-dom";
 import Item from "./Item";
 
