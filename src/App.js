@@ -1,7 +1,7 @@
 import './App.css';
 import React, { useState, useEffect, Suspense, useCallback } from 'react';
 import { getElement, setElement } from './services';
-import Bookmarks from './components/Bookmarks';
+import { Link } from "react-router-dom";
 const Item = React.lazy(() => import('./components/Item'));
 
 function App() {
@@ -59,13 +59,13 @@ function App() {
             onClick={() => toggleBookmark()}>
             {(bookmarks && bookmarks.length && bookmarks.includes(randomIndex)) ? '★' : '☆' || '☆'}
           </button>
-          <button className='mx-auto rounded-lg p-2 text-white my-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
+          <button className='mx-5 rounded-lg p-2 text-white my-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
             onClick={() => setRandomQuote()}>
             Get new quote!
           </button>
+            <Link to="/bookmarks" className="mx-5 rounded-lg p-2 text-white my-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">My bookmarks</Link>
         </div>
       </div>
-      <Bookmarks />
     </div>
   );
 }
