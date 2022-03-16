@@ -48,7 +48,7 @@ function App() {
   return (
     <div>
       <div className="min-h-screen flex flex-col justify-center">
-        <h1 className="text-3xl font-bold mx-auto text-white">
+        <h1 className="text-3xl font-bold mx-auto text-black dark:text-white">
           Gary a besoin d'une API
         </h1>
         <div className='mx-auto'>
@@ -58,15 +58,15 @@ function App() {
         </div>
         <div className="mx-auto flex">
           <button
-            className='mx-5 rounded-lg p-2 border-solid border-2 text-white my-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:border-yellow-500 hover:text-yellow-500 duration-300'
+            className='mx-5 rounded-lg p-2 border-solid border-2 text-sky-500 border-sky-500 dark:border-white dark:text-white my-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:border-yellow-500 hover:text-yellow-500 duration-300'
             onClick={() => toggleBookmark()}>
             {(bookmarks && bookmarks.length && bookmarks.includes(randomIndex + 1)) ? '★' : '☆' || '☆'}
           </button>
-          <button className='mx-5 rounded-lg p-2 text-white my-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
+          <button className='mx-5 rounded-lg p-2 border-2 border-sky-500 dark:border-0 dark:text-white my-5 transition ease-in-out delay-150 text-sky-500 dark:bg-blue-500 hover:-translate-y-1 hover:scale-110 dark:hover:bg-indigo-500 hover:text-sky-400 hover:border-sky-400 dark:hover:text-white duration-300'
             onClick={() => setRandomQuote()}>
             Get new quote!
           </button>
-            <Link to="/bookmarks" className="mx-5 rounded-lg p-2 text-white my-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300">My bookmarks</Link>
+            <Link to="/bookmarks" className="mx-5 rounded-lg p-2 border-2 border-sky-500 dark:border-0 text-sky-500 dark:text-white my-5 transition ease-in-out delay-150 dark:bg-blue-500 hover:-translate-y-1 hover:scale-110 dark:hover:bg-indigo-500 hover:text-sky-400 duration-300 hover:border-sky-400 dark:hover:text-white">My bookmarks</Link>
         </div>
       </div>
     </div>

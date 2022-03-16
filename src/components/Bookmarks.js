@@ -25,7 +25,7 @@ function Bookmarks() {
     return (
         <div>
             <div className="relative grid grid-cols-1 md:grid-cols-2 grid-rows-3">
-            <Link to="/" className="fixed top-0 left-2 rounded-lg p-2 text-white my-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-x-1 hover:bg-blue-400 duration-300">Return</Link>
+            <Link to="/" className="fixed top-0 left-2 rounded-lg p-2 bg-sky-500 text-white my-5 transition ease-in-out delay-150 dark:bg-blue-500 hover:-translate-x-1 dark:hover:bg-blue-400 hover:bg-sky-400 duration-300">Return</Link>
                 {quotes.map(quote => (
                     <div key={quote.id} className="flex flex-col">
                         <Item quote={quote} />
@@ -44,7 +44,7 @@ function Bookmarks() {
                 ))}
             </div>
             <div className="flex justify-end">
-            <Link to="/" className="mx-5 rounded-lg p-2 text-white my-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-x-5 hover:bg-blue-400 duration-300">Home page</Link>
+            <Link to="/" className="mx-5 rounded-lg p-2 border-2 border-sky-500 text-sky-500 dark:border-0 dark:text-white my-5 transition ease-in-out delay-150 dark:bg-blue-500 hover:-translate-x-5 dark:hover:bg-blue-400 duration-300 hover:border-sky-400 hover:text-sky-400 dark:hover:text-white">Home page</Link>
             </div>
         </div>
     )
