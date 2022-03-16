@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { getElement } from '../services';
+import { getElement, setElement } from '../services';
 import Item from "./Item";
 
 function Bookmarks() {
@@ -27,7 +27,17 @@ function Bookmarks() {
                     <div className="flex flex-col">
                         <Item quote={quote} />
                         <div className="mx-auto">
-                            <button className="rounded-lg border p-2 border-red-600 text-red-600">Unfav</button>
+                            <button
+                                className="rounded-lg border p-2 border-red-600 text-red-600"
+                                //remove bookmark on click
+                                onClick={() => {
+                                    const newBookmarks = bookmarks.filter(i => i !== quote.id);
+                                    setElement('bookmarks', newBookmarks);
+                                    setBookmarks(newBookmarks);
+                                }}
+                            >
+                                Unfav
+                            </button>
                         </div>
                     </div>
                 ))}
