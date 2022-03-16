@@ -27,7 +27,7 @@ function Bookmarks() {
             <div className="relative grid grid-cols-1 md:grid-cols-2 grid-rows-3">
             <Link to="/" className="fixed top-0 left-2 rounded-lg p-2 text-white my-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-x-1 hover:bg-blue-400 duration-300">Return</Link>
                 {quotes.map(quote => (
-                    <div className="flex flex-col">
+                    <div key={quote.id} className="flex flex-col">
                         <Item quote={quote} />
                         <div className="mx-auto">
                             <button
