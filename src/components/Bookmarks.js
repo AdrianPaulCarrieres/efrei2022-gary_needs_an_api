@@ -34,8 +34,7 @@ function Bookmarks() {
                                     const newBookmarks = bookmarks.filter(i => i !== quote.id);
                                     setElement('bookmarks', newBookmarks);
                                     setBookmarks(newBookmarks);
-                                }}
-                            >
+                                }}>
                                 Unfav
                             </button>
                         </div>
