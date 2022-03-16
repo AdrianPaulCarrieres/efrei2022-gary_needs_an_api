@@ -17,14 +17,16 @@ function App() {
 
 
   function toggleBookmark() {
-    if (bookmarks !== null && bookmarks.includes(randomIndex)) {
-      const newBookmarks = bookmarks.filter(i => i !== randomIndex);
+    const currentQuoteID = quotes[randomIndex].id;
+    if (bookmarks.includes(currentQuoteID)) {
+      const newBookmarks = bookmarks.filter(i => i !== currentQuoteID);
       setElement('bookmarks', newBookmarks);
       setBookmarks(newBookmarks);
     } else {
-      const newBookmarks = bookmarks;
-      setElement('bookmarks', bookmarks);
-      setBookmarks([...newBookmarks, randomIndex]);
+      const b = bookmarks;
+      const newBookmarks = [...b, currentQuoteID];
+      setBookmarks(newBookmarks);
+      setElement('bookmarks', newBookmarks);
     }
   }
 
@@ -58,7 +60,7 @@ function App() {
           <button
             className='mx-5 rounded-lg p-2 border-solid border-2 text-white my-5 transition ease-in-out delay-150 hover:-translate-y-1 hover:border-yellow-500 hover:text-yellow-500 duration-300'
             onClick={() => toggleBookmark()}>
-            {(bookmarks && bookmarks.length && bookmarks.includes(randomIndex)) ? '★' : '☆' || '☆'}
+            {(bookmarks && bookmarks.length && bookmarks.includes(randomIndex + 1)) ? '★' : '☆' || '☆'}
           </button>
           <button className='mx-5 rounded-lg p-2 text-white my-5 transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300'
             onClick={() => setRandomQuote()}>

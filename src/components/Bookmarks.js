@@ -15,7 +15,8 @@ function Bookmarks() {
         fetch('https://finalspaceapi.com/api/v0/quote/')
             .then(response => response.json())
             .then(data => {
-                const q = data.filter(quote => bookmarks.includes(quote.id))
+                const b = bookmarks
+                const q = data.filter(quote => b.includes(quote.id))
                 setQuotes(q)
             })
             .catch(error => console.log(error));
