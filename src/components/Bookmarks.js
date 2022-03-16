@@ -24,7 +24,12 @@ function Bookmarks() {
         <div>
             <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 grid-rows-3">
                 {quotes.map(quote => (
-                    <Item quote={quote} />
+                    <div className="flex flex-col">
+                        <Item quote={quote} />
+                        <div className="mx-auto">
+                            <button className="rounded-lg border p-2 border-red-600 text-red-600">Unfav</button>
+                        </div>
+                    </div>
                 ))}
             </div>
         </div>
