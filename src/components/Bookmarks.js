@@ -22,14 +22,13 @@ function Bookmarks() {
 
     return (
         <div>
-            <div className="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 grid-rows-3">
+            <div className="grid grid-cols-1 md:grid-cols-2 grid-rows-3">
                 {quotes.map(quote => (
                     <div className="flex flex-col">
                         <Item quote={quote} />
                         <div className="mx-auto">
                             <button
                                 className="rounded-lg border p-2 border-red-600 text-red-600"
-                                //remove bookmark on click
                                 onClick={() => {
                                     const newBookmarks = bookmarks.filter(i => i !== quote.id);
                                     setElement('bookmarks', newBookmarks);
