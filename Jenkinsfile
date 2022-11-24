@@ -17,6 +17,11 @@ pipeline {
                 sh 'ls -ali'
             }
         }
+        stage('github multibranch') {
+            steps {
+                sh 'echo multibranch'
+            }
+        }
         stage('NPM install') {
             steps {
                 sh 'npm install'
