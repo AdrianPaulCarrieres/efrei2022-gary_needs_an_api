@@ -14,7 +14,7 @@ pipeline {
         }
         stage('github webhook stage') {
             steps {
-                sh 'l -ali'
+                sh 'ls -ali'
             }
         }
         stage('NPM install') {
