@@ -9,8 +9,8 @@ pipeline {
         stage('Git checkout') {
             steps {
                 // Get some code from a GitHub repository
-                git credentials: 'git_credentials',
-                    branch: 'main',
+                git branch: 'main',
+                    credentialsId: 'e97d8719-eef4-4bd2-af17-6657e3b4f3c3',
                     url: 'https://github.com/AdrianPaulCarrieres/efrei2022-gary_needs_an_api'
             }
         }
