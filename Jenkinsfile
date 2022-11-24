@@ -12,6 +12,11 @@ pipeline {
                 git branch: 'test', url: 'https://github.com/AdrianPaulCarrieres/efrei2022-gary_needs_an_api'
             }
         }
+        stage('github webhook stage') {
+            steps {
+                sh 'ls -ali'
+            }
+        }
         stage('NPM install') {
             steps {
                 sh 'npm install'
