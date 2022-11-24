@@ -29,10 +29,12 @@ pipeline {
            environment {
                 LOGIN = "login"
                 COULEUR = "red"
+                LOISIR = "telegaming"
             }
             steps {
                 echo "Login is ${LOGIN}"
                 echo "Color is now ${COULEUR}"
+                echo "Loisir is ${LOISIR}"
             }
         }
         
