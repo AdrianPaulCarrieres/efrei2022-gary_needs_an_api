@@ -27,11 +27,6 @@ pipeline {
                 sh 'npm run test'
             }
         }
-        stage('DOCKER build') {
-            steps {
-                sh "docker build -t adrianpaulcarrieres/garry:latest '.'"
-            }
-        }
     }
     post {
         failure {
