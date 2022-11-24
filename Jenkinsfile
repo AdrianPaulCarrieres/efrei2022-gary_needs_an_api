@@ -5,9 +5,9 @@ pipeline {
         nodejs "node 18"
     }
     
-    env {
-        login "login"
-        couleur "blue"
+    environment {
+        LOGIN = "login"
+        COULEUR = "blue"
     }
 
     stages {
