@@ -19,6 +19,23 @@ pipeline {
                     url: 'https://github.com/AdrianPaulCarrieres/efrei2022-gary_needs_an_api'
             }
         }
+        stage('Use env var') {
+            steps {
+                echo "Login is ${LOGIN}"
+                echo "Color is ${COULEUR}"
+            }
+        }
+        stage('Use env but they are news') {
+           environment {
+                LOGIN = "login"
+                COULEUR = "red"
+            }
+            steps {
+                echo "Login is ${LOGIN}"
+                echo "Color is now ${COULEUR}"
+            }
+        }
+        
         stage('github webhook stage') {
             steps {
                 sh 'ls -ali'
