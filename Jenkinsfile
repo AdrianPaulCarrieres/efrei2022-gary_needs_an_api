@@ -4,6 +4,11 @@ pipeline {
     tools {
         nodejs "node 18"
     }
+    
+    env {
+        login "login"
+        couleur "blue"
+    }
 
     stages {
         stage('Git checkout') {
