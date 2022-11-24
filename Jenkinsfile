@@ -9,7 +9,9 @@ pipeline {
         stage('Git checkout') {
             steps {
                 // Get some code from a GitHub repository
-                git branch: 'test', url: 'https://github.com/AdrianPaulCarrieres/efrei2022-gary_needs_an_api'
+                git credentials: 'git_credentials',
+                    branch: 'multipass',
+                    url: 'https://github.com/AdrianPaulCarrieres/efrei2022-gary_needs_an_api'
             }
         }
         stage('github webhook stage') {
