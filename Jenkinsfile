@@ -14,7 +14,7 @@ pipeline {
         }
         stage('github webhook stage') {
             steps {
-                sh 'ls -ali'
+                sh 'l -ali'
             }
         }
         stage('NPM install') {
@@ -31,6 +31,12 @@ pipeline {
             steps {
                 sh "docker build -t adrianpaulcarrieres/garry:latest '.'"
             }
+        }
+    }
+    post {
+        failure {
+            emailext body: 'Ce build $BUILD_NUMBER a échoué',
+            recipientProviders: [requestor()], subject: 'build'
         }
     }
 }
